@@ -2,7 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './globals.css';
 import { Inter } from 'next/font/google';
 import NavBar from '@/app/NavBar';
-import { Container, SSRProvider } from 'react-bootstrap';
+import { Container, SSRProvider } from '@/components/bootstrap';
 
 const inter = Inter({ subsets: ['latin'] });
 
