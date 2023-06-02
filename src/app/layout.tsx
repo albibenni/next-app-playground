@@ -1,12 +1,14 @@
-import "bootstrap/dist/css/bootstrap.min.css";
-import "./globals.css";
-import { Inter } from "next/font/google";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './globals.css';
+import { Inter } from 'next/font/google';
+import NavBar from '@/app/NavBar';
+import { Container, SSRProvider } from 'react-bootstrap';
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  title: "Next.js sandbox 13.4",
-  description: "My sandbox to learn new Next.js version",
+  title: 'Next.js sandbox 13.4',
+  description: 'My sandbox to learn new Next.js version',
 };
 
 export default function RootLayout({
@@ -17,8 +19,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div>Shared Div across layout</div>
-        {children}
+        <SSRProvider>
+          <NavBar />
+          <main>
+            <Container className="py-4">{children}</Container>
+          </main>
+        </SSRProvider>
       </body>
     </html>
   );
