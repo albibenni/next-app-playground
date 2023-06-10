@@ -1,5 +1,6 @@
 import { UnplashImage } from '@/models/unplash-image';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default async function page() {
   const response = await fetch(
@@ -17,7 +18,10 @@ export default async function page() {
         width={myWidth}
         height={myHeight}
         alt={image.description}
+        className="rounded shadow mw-100 h-100"
       />
+      by{' '}
+      <Link href={'/users/' + image.user.username}>{image.user.username}</Link>
     </div>
   );
 }
