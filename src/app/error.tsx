@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import { Button } from "react-bootstrap";
+import { Button } from 'react-bootstrap';
 
 interface ErrorPageProps {
   error: Error;
