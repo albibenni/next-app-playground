@@ -3,6 +3,8 @@ import { Metadata } from 'next';
 import { UnplashUser } from '@/models/unplash-user';
 import { notFound } from 'next/navigation';
 
+// import { cache } from 'react';
+
 interface PageProps {
   params: {
     username: string;
@@ -28,6 +30,7 @@ export async function generateMetadata({
   };
 }
 
+// const getUserCached = cache(getUser);
 export default async function page({ params: { username } }: PageProps) {
   const user: UnplashUser = await getUser(username);
 
