@@ -1,6 +1,6 @@
 import { Alert } from '@/components/bootstrap';
 import { Metadata } from 'next';
-import { UnplashUser } from '@/models/unplash-user';
+import { UnsplashUser } from '@/models/unsplash-user';
 import { notFound } from 'next/navigation';
 
 // import { cache } from 'react';
@@ -10,7 +10,7 @@ interface PageProps {
     username: string;
   };
 }
-async function getUser(username: string): Promise<UnplashUser> {
+async function getUser(username: string): Promise<UnsplashUser> {
   const res = await fetch(
     `https://api.unsplash.com/users/${username}?client_id=${process.env.UNSPLASH_ACCESS_KEY}`
   );
@@ -21,7 +21,7 @@ async function getUser(username: string): Promise<UnplashUser> {
 export async function generateMetadata({
   params: { username },
 }: PageProps): Promise<Metadata> {
-  const user: UnplashUser = await getUser(username);
+  const user: UnsplashUser = await getUser(username);
 
   return {
     title:
@@ -32,7 +32,7 @@ export async function generateMetadata({
 
 // const getUserCached = cache(getUser);
 export default async function page({ params: { username } }: PageProps) {
-  const user: UnplashUser = await getUser(username);
+  const user: UnsplashUser = await getUser(username);
 
   return (
     <div>
