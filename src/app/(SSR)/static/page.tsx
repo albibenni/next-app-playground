@@ -29,7 +29,7 @@ export default async function page() {
         alt={image.description}
         className="rounded shadow mw-100 h-100"
       />
-      by{' '}
+      by
       <Link href={'/users/' + image.user.username}>{image.user.username}</Link>
     </div>
   );
