@@ -13,7 +13,7 @@ export default function SearchPage() {
   const [searchResultsLoading, setSearchResultsLoading] = useState(false);
   const [searchResultsLoadingIsError, setSearchResultsLoadingIsError] =
     useState(false);
-  async function handleSubmit(e: FormEvent) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const formData = new FormData(e.target as HTMLFormElement);
     const query = formData.get('query')?.toString().trim();

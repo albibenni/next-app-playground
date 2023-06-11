@@ -11,5 +11,5 @@ export interface UnsplashImage {
 }
 
 export interface UnsplashSearchResponse {
-  result: UnsplashImage[];
+  results: UnsplashImage[];
 }
